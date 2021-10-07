@@ -26,8 +26,7 @@
 }
 
 .servicio__detalles {
-    padding-bottom: 10px;
-  
+    
     .card {
       border: 0;
       padding: 0 30px;
@@ -36,8 +35,7 @@
     }
   
     .card-img {
-      width: calc(100% + 60px);
-      margin-left: -30px;
+      width: 100%;
       overflow: hidden;
       z-index: 9;
       border-radius: 0;
@@ -50,11 +48,11 @@
   
     .card-body {
       z-index: 10;
-      background: #fff;
+      background: $rosadoSecundario;
       border-top: 4px solid #fff;
       padding: 30px;
       box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-      margin-top: -60px;
+      margin-top: 10px;
       transition: 0.3s;
     }
   
@@ -78,10 +76,10 @@
       }
   
       .card-body {
-        border-color: lightblue;
+        border-color: $celestePrimario;
   
         .card-title a {
-          color: lightblue;
+          color: $celestePrimario;
         }
       }
     }

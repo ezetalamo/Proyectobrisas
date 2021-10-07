@@ -9,9 +9,8 @@
 
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #444;
-  // background-image: linear-gradient(to bottom, #f6f3e0, #f2eeda, #edead3, #e9e5cd, #e5e1c7);
   background-color: #D3E0DC;
 }
 
@@ -20,14 +19,16 @@ a {
   text-decoration: none;
 
   &:hover {
-    color: #45beff;
+    color: $celestePrimario;
     text-decoration: none;
   }
 }
+
 h2 {
   font-family: "Roboto", "sans-serif";
   color: rgb(80, 80, 80);
 }
+
 h1,
 h3,
 h4,
@@ -59,7 +60,7 @@ font-primary {
 
   .logo {
     h1 {
-      font-size: 28px;
+      font-size: 2em;
       margin: 0;
       padding: 4px 0;
       line-height: 1;
@@ -117,8 +118,8 @@ font-primary {
     align-items: center;
     justify-content: space-between;
     padding: 10px 0 10px 30px;
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.1em;
     color: #fff;
     white-space: nowrap;
     transition: 0.3s;
@@ -128,16 +129,15 @@ font-primary {
       align-items: center;
       justify-content: space-between;
       padding: 10px 0 10px 30px;
-      font-family: "Open Sans", sans-serif;
-      font-size: 14px;
-      color: #fff;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.2em;
       white-space: nowrap;
       transition: 0.3s;
     }
 
     i,
     &:focus i {
-      font-size: 12px;
+      font-size: 1.3;
       line-height: 0;
       margin-left: 5px;
     }
@@ -147,92 +147,13 @@ font-primary {
     }
   }
 
-  .active {
-    color: $celestePrimario;
-
-    &:focus {
-      color: $celestePrimario;
-    }
-  }
 
   li:hover>a {
     color: $celestePrimario;
   }
 
-  .dropdown {
-    ul {
-      display: block;
-      position: absolute;
-      left: 14px;
-      top: calc(100% + 30px);
-      margin: 0;
-      padding: 10px 0;
-      z-index: 99;
-      opacity: 0;
-      visibility: hidden;
-      background:$rosadoPrincipal;
-      box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-      transition: 0.3s;
-
-      li {
-        min-width: 200px;
-      }
-
-      a {
-        padding: 10px 20px;
-        font-size: 14px;
-        text-transform: none;
-        color: #1c3745;
-
-        i {
-          font-size: 12px;
-        }
-
-        &:hover {
-          color: $celestePrimario;
-        }
-      }
-
-      .active:hover,
-      li:hover>a {
-        color: $celestePrimario;
-      }
-    }
-
-    &:hover>ul {
-      opacity: 1;
-      top: 100%;
-      visibility: visible;
-    }
-
-    .dropdown {
-      ul {
-        top: 0;
-        left: calc(100% - 30px);
-        visibility: hidden;
-      }
-
-      &:hover>ul {
-        opacity: 1;
-        top: 0;
-        left: 100%;
-        visibility: visible;
-      }
-    }
-  }
 }
 
-@media (max-width: 1366px) {
-  .navbar .dropdown .dropdown {
-    ul {
-      left: -90%;
-    }
-
-    &:hover>ul {
-      left: -100%;
-    }
-  }
-}
 
 /**
 * Mobile Navigation 
@@ -296,54 +217,6 @@ font-primary {
       color: $celestePrimario;
     }
   }
-
-  .active,
-  li:hover>a {
-    color: $celestePrimario;
-  }
-
-  .getstarted {
-    margin: 15px;
-  }
-
-  .dropdown {
-    ul {
-      position: static;
-      display: none;
-      margin: 10px 20px;
-      padding: 10px 0;
-      z-index: 99;
-      opacity: 1;
-      visibility: visible;
-      background: #fff;
-      box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-
-      li {
-        min-width: 200px;
-      }
-
-      a {
-        padding: 10px 20px;
-
-        i {
-          font-size: 12px;
-        }
-
-        &:hover {
-          color: #68A4C4;
-        }
-      }
-
-      .active:hover,
-      li:hover>a {
-        color: #68A4C4;
-      }
-    }
-
-    >.dropdown-active {
-      display: block;
-    }
-  }
 }
 
 /*--------------------------------------------------------------
@@ -376,14 +249,10 @@ font-primary {
 
     h2 {
       text-align: center;
-      font-size: 5em;
+      font-size: 4em;
       color: white;
     }
 
-    h3 {
-      text-align: center;
-      color: rgb(170,170, 170);
-    }
   }
 
   @media (max-width: 991px) {
@@ -415,19 +284,221 @@ font-primary {
         font-size: 3em;
         color: white;
       }
-
-      h3 {
-        text-align: center;
-        color: rgb(170,170, 170);
-        font-size: 2em;
-      }
     }
   }
 
+
+  @media (max-width: 700px) {
+    @if ($hero==fondoHero) {
+      width: 100%;
+      height: 100vh;
+      background: url("../img/hero.jpeg") top center;
+      background-size: cover;
+
+      &:before {
+        content: "";
+        background: rgba(5, 13, 24, 0.3);
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+      }
+
+      .hero-container {
+        position: relative;
+        z-index: 2;
+        min-width: 200px;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 1.8em;
+        color: white;
+      }
+
+    }
+  }
 }
+
 /*--------------------------------------------------------------
 # Index-productos
 --------------------------------------------------------------*/
+.c-hero-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: -25px;
+
+}
+
+.c-hero-flex__item {
+  flex-grow: 1;
+  background: $rosadoPrincipal;
+  height: 50vh;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  transition: 0.2s all;
+  cursor: pointer;
+  padding: 2em;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.c-hero-flex__item:nth-child(1) {
+  background: url("../img/productos/Triple.jpeg") no-repeat center;
+  background-size: 400px;
+}
+
+.c-hero-flex__item:nth-child(1):hover {
+  background: url("../img/productos/triple2.jpeg") no-repeat center;
+  background-size: 400px;
+}
+
+.c-hero-flex__item:nth-child(2) {
+  background: url("../img/productos/piramide2.jpeg") no-repeat center;
+  background-size: 400px;
+}
+
+.c-hero-flex__item:nth-child(2):hover {
+  background: url("../img/productos/piramide.jpeg") no-repeat center;
+  background-size: 400px;
+}
+
+.c-hero-flex__item:nth-child(3) {
+  background: url("../img/productos/defumacion.jpeg") no-repeat center;
+  background-size: 400px;
+}
+
+.c-hero-flex__item:nth-child(3):hover {
+  background: url("../img/productos/defumacion2.jpeg") no-repeat center;
+  background-size: 400px;
+}
+
+@media (max-width: 991px) {
+
+  .c-hero-flex {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-top: -25px;
+
+  }
+
+  .c-hero-flex__item {
+    flex-grow: 1;
+    background: $rosadoPrincipal;
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    transition: 0.2s all;
+    cursor: pointer;
+    padding: 2em;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .c-hero-flex__item:nth-child(1) {
+    background: url("../img/productos/Triple.jpeg") no-repeat center;
+    background-size: 400px;
+  }
+
+  .c-hero-flex__item:nth-child(1):hover {
+    background: url("../img/productos/triple2.jpeg") no-repeat center;
+    background-size: 400px;
+  }
+
+  .c-hero-flex__item:nth-child(2) {
+    background: url("../img/productos/piramide2.jpeg") no-repeat center;
+    background-size: 400px;
+  }
+
+  .c-hero-flex__item:nth-child(2):hover {
+    background: url("../img/productos/piramide.jpeg") no-repeat center;
+    background-size: 400px;
+  }
+
+  .c-hero-flex__item:nth-child(3) {
+    background: url("../img/productos/defumacion.jpeg") no-repeat center;
+    background-size: 400px;
+  }
+
+  .c-hero-flex__item:nth-child(3):hover {
+    background: url("../img/productos/defumacion2.jpeg") no-repeat center;
+    background-size: 400px;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .c-hero-flex {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-top: -25px;
+
+  }
+
+  .c-hero-flex__item {
+    flex-grow: 1;
+    background: $rosadoPrincipal;
+    height: 75vh;
+    width: 75vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    transition: 0.2s all;
+    cursor: pointer;
+    padding: 2em;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .c-hero-flex__item:nth-child(1) {
+    background: url("../img/productos/Triple.jpeg") no-repeat center;
+    background-size: 400px;
+  }
+
+  .c-hero-flex__item:nth-child(1):hover {
+    background: url("../img/productos/triple2.jpeg") no-repeat center;
+    background-size: 400px;
+  }
+
+  .c-hero-flex__item:nth-child(2) {
+    background: url("../img/productos/piramide2.jpeg") no-repeat center;
+    background-size: 400px;
+  }
+
+  .c-hero-flex__item:nth-child(2):hover {
+    background: url("../img/productos/piramide.jpeg") no-repeat center;
+    background-size: 400px;
+  }
+
+  .c-hero-flex__item:nth-child(3) {
+    background: url("../img/productos/defumacion.jpeg") no-repeat center;
+    background-size: 400px;
+  }
+
+  .c-hero-flex__item:nth-child(3):hover {
+    background: url("../img/productos/defumacion2.jpeg") no-repeat center;
+    background-size: 400px;
+  }
+
+}
 
 /*--------------------------------------------------------------
 # Mis servicios
@@ -518,44 +589,23 @@ font-primary {
   }
 
   .icon-box-armonizacion {
-    .icon {
-      background: #fceef3;
-
-      i {
-        color: $rosadoPrincipal;
-      }
-    }
-
     &:hover {
-      border-color: $rosadoPrincipal ;
+      border: solid 1px $celestePrimario;
+      border-radius: 10mm;
     }
   }
 
   .icon-box-astrologia {
-    .icon {
-      background: #e6fdfc;
-
-      i {
-        color: $rosadoPrincipal;
-      }
-    }
-
     &:hover {
-      border-color: $rosadoPrincipal;
+      border: solid 1px $celestePrimario;
+      border-radius: 10mm;
     }
   }
 
   .icon-box-numerologia {
-    .icon {
-      background: #eafde7;
-
-      i {
-        color: $rosadoPrincipal;
-      }
-    }
-
     &:hover {
-      border-color: $rosadoPrincipal;
+      border: solid 1px $celestePrimario;
+      border-radius: 10mm;
     }
   }
 }
@@ -578,10 +628,10 @@ font-primary {
 
     .titulo {
 
-      font-weight: 700;
       margin-bottom: 10px;
       font-size: 18px;
       text-transform: uppercase;
+      text-align: center;
 
     }
   }
@@ -625,146 +675,6 @@ font-primary {
   }
 }
 
-
-/*--------------------------------------------------------------
-# Contact
---------------------------------------------------------------*/
-
-.contact {
-  padding-bottom: 30px;
-
-  .info-box {
-    color: #444;
-    text-align: center;
-    box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
-    padding: 20px 0 30px 0;
-    margin-bottom: 30px;
-
-    i {
-      font-size: 32px;
-      color: #68A4C4;
-      border-radius: 50%;
-      padding: 8px;
-      border: 2px dotted #a2cce3;
-    }
-
-    h3 {
-      font-size: 20px;
-      color: #666;
-      font-weight: 700;
-      margin: 10px 0;
-    }
-
-    p {
-      padding: 0;
-      line-height: 24px;
-      font-size: 14px;
-      margin-bottom: 0;
-    }
-  }
-
-  .php-email-form {
-    box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
-    padding: 30px;
-    margin-bottom: 30px;
-
-    .error-message {
-      display: none;
-      color: #fff;
-      background: #ed3c0d;
-      text-align: left;
-      padding: 15px;
-      font-weight: 600;
-
-      br+br {
-        margin-top: 25px;
-      }
-    }
-
-    .sent-message {
-      display: none;
-      color: #fff;
-      background: #18d26e;
-      text-align: center;
-      padding: 15px;
-      font-weight: 600;
-    }
-
-    .loading {
-      display: none;
-      background: #fff;
-      text-align: center;
-      padding: 15px;
-
-      &:before {
-        content: "";
-        display: inline-block;
-        border-radius: 50%;
-        width: 24px;
-        height: 24px;
-        margin: 0 10px -6px 0;
-        border: 3px solid #18d26e;
-        border-top-color: #eee;
-        -webkit-animation: animate-loading 1s linear infinite;
-        animation: animate-loading 1s linear infinite;
-      }
-    }
-
-    input,
-    textarea {
-      border-radius: 0;
-      box-shadow: none;
-      font-size: 14px;
-    }
-
-    input::focus,
-    textarea::focus {
-      background-color: #68A4C4;
-    }
-
-    input {
-      padding: 10px 15px;
-    }
-
-    textarea {
-      padding: 12px 15px;
-    }
-
-    button[type="submit"] {
-      background: #68A4C4;
-      border: 0;
-      padding: 10px 24px;
-      color: #fff;
-      transition: 0.4s;
-
-      &:hover {
-        background: #8dbad2;
-      }
-    }
-  }
-}
-
-@-webkit-keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -788,7 +698,7 @@ font-primary {
       color: #a2cce3;
     }
 
-   }
+  }
 
   .footer-top {
     background-color: $rosadoSecundario;
